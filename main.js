@@ -2,8 +2,35 @@
 
 $(document).ready(function () {
 
-    let newImage,exitImage;
+    let newImage, exitImage, divImage;
     $("img").click(function () {
+
+
+        //1-create new div
+        //2-append to body up htmldiv
+        //3-create Images
+        //4-append images to div
+        //
+
+        //create div 
+
+        divImage = $('<div></div>');
+        divImage.addClass("colors");
+        $('#flw').append(divImage);
+        $(divImage).animate({
+            'width': "786px",
+            'height': "735px",
+            'z-index': '3',
+            'position': 'absloute',
+            'display': 'block',
+            'margin-top': '-713px',
+            'margin-left': '-50px',
+            'background': 'red'
+        })
+
+
+
+        //create newimage with this.src
 
         newImage = $('<img />', {
             id: 'imgId',
@@ -11,79 +38,66 @@ $(document).ready(function () {
             alt: 'Alt text'
         });
 
-
-        $('body').append(newImage);
+        $(divImage).append(newImage);
 
         $(newImage).animate({
             'width': "700px",
             'height': "650px",
-            'z-index': '3',
+            'z-index': '1',
             'position': 'fixed',
             'display': 'block',
             'margin-top': '20px',
-            'margin-left': '354px',
+            'margin-left': '20px',
 
+        })
 
+        //create exit button to remov slider gallary
 
-        }).append($('div'));
-    })
-    
-    $('img').click(function () {
 
         exitImage = $('<img />', {
             src: 'exit.png',
             alt: 'Alt text'
         });
-        $('body').append(exitImage);
 
+        $(divImage).append(exitImage);
         $(exitImage).animate({
             'width': "40px",
             'height': "40px",
-            'z-index': '4',
+            'z-index': '3',
             'position': 'absolute',
             // 'display':'block',
-            'padding-top': '40px',
-            'margin-left': '0px',
+            'padding-top': '-651px',
+            // 'margin-top': '-725px',
+            'margin-left': '-54px',
+
+        })
 
 
 
-        }).append($('div'));
+        //start exit event
 
         $(exitImage).click(function () {
-            $(newImage).remove();
-            $(exitImage).remove();
 
+            $(divImage).remove();
 
-            
-    
         })
-    })
 
-  
+    })
+    // end creation of slider gallary 
+
+
+
+
+
+
 
 
 });
 
 
 
- // let divImag;
-    // $("img").click(function () {
-    //     divImag = $('<div></div>');
-
-    //     $('body').append(divImag);
-    //     $(divImag).animate({
-    //         'width': "700px",
-    //         'height': "650px",
-    //         'z-index': '3',
-    //         'position': 'fixed',
-    //         'display': 'block',
-    //         'margin-top': '20px',
-    //         'margin-left': '354px',
 
 
-    //     }).append($('div'));
-
-    // })
 
 
 

@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-    let newImage, exitImage, divImage;
+    let newImage, exitImage, lessImage, greaterImage, divImage;
     $("img").click(function () {
 
 
@@ -72,13 +72,73 @@ $(document).ready(function () {
 
         })
 
+        //create lessImage         
+
+        lessImage = $('<img />', {
+            src: 'less.png',
+            alt: 'Alt text'
+        });
+
+        $(divImage).append(lessImage);
+        $(lessImage).animate({
+            'width': "40px",
+            'height': "40px",
+            'z-index': '3',
+            'position': 'absloute',
+            // 'display':'block',
+            'padding-top': '-46px',
+            'margin-top': '-15px',
+            'margin-left': '-74px',
+
+        })
+
+        //create greaterImage         
+
+        greaterImage = $('<img />', {
+            src: 'greater.png',
+            alt: 'Alt text'
+        });
+
+        $(divImage).append(greaterImage);
+        $(greaterImage).animate({
+            'width': "40px",
+            'height': "40px",
+            'z-index': '3',
+            'position': 'absloute',
+            // 'display':'block',
+            'padding-top': '-46px',
+            'margin-top': '-80px',
+            'margin-left': '785px',
+
+        })
 
 
-        //start exit event
+
+
+
+
+        //start exit function
 
         $(exitImage).click(function () {
 
             $(divImage).remove();
+
+        })
+
+        //less than function
+
+        $(lessImage).click(function () {
+
+            // $(divImage).remove();
+            console.log('ss')
+
+        })
+
+        //greater than function
+        $(greaterImage).click(function () {
+
+            // $(divImage).remove();
+            console.log('os')
 
         })
 
